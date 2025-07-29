@@ -1,0 +1,17 @@
+services:
+  nokiaguideai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nokiaguideai:latest
+    ports:
+      - 8000:8000
+      - 5678:5678
+    volumes:
+      - .:/app
+    networks:
+      - ollama-docker
+
+networks:
+  ollama-docker:
+    external: false

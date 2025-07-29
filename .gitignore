@@ -1,0 +1,12 @@
+build/*
+.env
+*.gguf
+/db
+ollama
+.ropeproject
+.DS_Store
+__pycache__
+training/model-*/
+dataset/train-*
+.venv
+*.egg-info
