@@ -168,7 +168,6 @@ def predict(finetuned_model: str, question: str):
     tokenizer = AutoTokenizer.from_pretrained(finetuned_model)
     model = AutoModelForSeq2SeqLM.from_pretrained(finetuned_model, pad_token_id=tokenizer.eos_token_id).to(torch_device)
     prompt = (
-        f"You are CustomerCareAI, a helpful assistant for question answering task. If you don't know the answer, just say that you don't know. Keep the answer concise."
         f"Please answer to this question: {question}"
     )
     inputs = tokenizer(prompt, return_tensors="pt").to(torch_device)
